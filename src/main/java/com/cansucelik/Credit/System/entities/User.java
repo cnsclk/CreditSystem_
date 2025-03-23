@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "user")
 @Data
@@ -27,5 +29,9 @@ private double monthlyIncome;
 @Column(name = "totalDebt")
 private double totalDebt;
 
+    @OneToOne
+    private CreditScore creditScore;
 
+    @OneToMany
+    private List<LoanApplication>loanApplications;
 }
